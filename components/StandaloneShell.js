@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ImageStudio, VideoStudio, LipSyncStudio, CinemaStudio } from 'studio';
 import ApiKeyModal from './ApiKeyModal';
+import ShivajiStoryWorkflow from './ShivajiStoryWorkflow';
 
 const TABS = [
   { id: 'image',   label: 'Image Studio' },
@@ -17,6 +18,7 @@ export default function StandaloneShell() {
   const [apiKey, setApiKey] = useState(null);
   const [activeTab, setActiveTab] = useState('image');
   const [showSettings, setShowSettings] = useState(false);
+  const [showShivajiWorkflow, setShowShivajiWorkflow] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -41,47 +43,40 @@ export default function StandaloneShell() {
     </div>
   );
 
-  if (!apiKey) {
-    return <ApiKeyModal onSave={handleKeySave} />;
-  }
+  if (!apiKey) return <ApiKeyModal onSave={handleKeySave} />;
 
   return (
     <div className="h-screen bg-[#050505] flex flex-col overflow-hidden">
-      {/* Header */}
       <header className="flex-shrink-0 flex items-center justify-between px-4 pt-4 pb-0 border-b border-white/5">
         <div className="flex items-center gap-3">
-          <span className="text-white font-black text-lg tracking-wider uppercase">
-            Open Higgsfield AI
-          </span>
+          <span className="text-white font-black text-lg tracking-wider uppercase">Open Higgsfield AI</span>
         </div>
 
-        {/* Tabs */}
         <nav className="flex items-center gap-1">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 text-sm font-medium rounded-t-lg transition-colors ${
-                activeTab === tab.id
-                  ? 'bg-[#d9ff00] text-black'
-                  : 'text-white/50 hover:text-white'
-              }`}
+              className={`px-4 py-2 text-sm font-medium rounded-t-lg transition-colors ${activeTab === tab.id ? 'bg-[#d9ff00] text-black' : 'text-white/50 hover:text-white'}`}
             >
               {tab.label}
             </button>
           ))}
         </nav>
 
-        {/* Settings */}
-        <button
-          onClick={() => setShowSettings(true)}
-          className="text-white/40 hover:text-white text-sm transition-colors"
-        >
-          ⚙ Settings
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => setShowShivajiWorkflow(true)}
+            className="px-4 py-2 rounded-xl bg-[#d9ff00] text-black text-xs font-black hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(217,255,0,0.12)]"
+          >
+            Generate Shivaji Kids Story
+          </button>
+          <button onClick={() => setShowSettings(true)} className="text-white/40 hover:text-white text-sm transition-colors">
+            ⚙ Settings
+          </button>
+        </div>
       </header>
 
-      {/* Studio Content */}
       <div className="flex-1">
         {activeTab === 'image'   && <ImageStudio   apiKey={apiKey} />}
         {activeTab === 'video'   && <VideoStudio   apiKey={apiKey} />}
@@ -89,7 +84,13 @@ export default function StandaloneShell() {
         {activeTab === 'cinema'  && <CinemaStudio  apiKey={apiKey} />}
       </div>
 
-      {/* Settings Modal */}
+      {showShivajiWorkflow && (
+        <ShivajiStoryWorkflow
+          apiKey={apiKey}
+          onClose={() => setShowShivajiWorkflow(false)}
+        />
+      )}
+
       {showSettings && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
           <div className="bg-[#111] border border-white/10 rounded-2xl p-8 w-full max-w-md">
@@ -98,18 +99,8 @@ export default function StandaloneShell() {
               Current API key: <span className="text-white/80 font-mono">{apiKey.slice(0, 8)}••••••••</span>
             </p>
             <div className="flex gap-3">
-              <button
-                onClick={handleKeyChange}
-                className="flex-1 py-2 rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500/30 text-sm transition-colors"
-              >
-                Change API Key
-              </button>
-              <button
-                onClick={() => setShowSettings(false)}
-                className="flex-1 py-2 rounded-lg bg-white/5 text-white hover:bg-white/10 text-sm transition-colors"
-              >
-                Close
-              </button>
+              <button onClick={handleKeyChange} className="flex-1 py-2 rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500/30 text-sm transition-colors">Change API Key</button>
+              <button onClick={() => setShowSettings(false)} className="flex-1 py-2 rounded-lg bg-white/5 text-white hover:bg-white/10 text-sm transition-colors">Close</button>
             </div>
           </div>
         </div>
