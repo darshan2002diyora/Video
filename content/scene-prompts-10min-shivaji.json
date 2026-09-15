@@ -1,0 +1,24 @@
+{
+  "title": "Little Shivaji and the Promise of Swarajya",
+  "audience": "ages 3-5",
+  "duration_seconds": 600,
+  "aspect_ratio": "16:9",
+  "visual_style": "high-quality 3D children's animation, warm cinematic lighting, colorful Maharashtra landscapes, expressive friendly characters, historically inspired clothing and architecture, gentle and non-violent",
+  "scenes": [
+    {"scene":1,"duration":35,"title":"The Hills of Maharashtra","prompt":"Beautiful green hills of Maharashtra at sunrise, distant historic hill fort, birds flying, flowers and trees, young Shivaji Maharaj as a cheerful child walking with curiosity, Jijabai nearby, colorful 3D children's animation, gentle cinematic camera."},
+    {"scene":2,"duration":40,"title":"Mother's Story","prompt":"Young Shivaji sitting beside Jijabai beneath a tree at golden hour, Jijabai warmly telling him a story, child listening with wonder, peaceful village and hills in background, expressive faces, family-friendly Indian historical animation."},
+    {"scene":3,"duration":40,"title":"What Is Courage?","prompt":"Close friendly conversation between child Shivaji and Jijabai, Jijabai explaining courage and kindness, soft warm lighting, gentle hand gestures, no weapons, child-safe educational animation."},
+    {"scene":4,"duration":40,"title":"Helping a Friend","prompt":"Village path in historic Maharashtra, young Shivaji helping another child carry a heavy basket toward a small home, villagers smiling, colorful clothing, cheerful children's animation."},
+    {"scene":5,"duration":45,"title":"The Rainy Path","prompt":"After gentle rain, villagers looking at a muddy path leading to fields, young Shivaji listening carefully to them, cloudy sky clearing, positive teamwork atmosphere, cinematic 3D animation."},
+    {"scene":6,"duration":45,"title":"Everyone Works Together","prompt":"Children and villagers safely clearing small branches and stones from a village path together, young Shivaji encouraging everyone, joyful teamwork, bright sunlight returning, no dangerous activity, children's animation."},
+    {"scene":7,"duration":40,"title":"The Great Fort","prompt":"Young Shivaji looking up in amazement at a magnificent historic hill fort in Maharashtra, sweeping mountain landscape, clouds moving gently, epic but peaceful cinematic children's animation."},
+    {"scene":8,"duration":45,"title":"Learning Swarajya","prompt":"Jijabai teaching young Shivaji the meaning of Swarajya in a peaceful courtyard, simple visual symbolism of a happy safe village and people living with dignity, warm family scene, educational animation."},
+    {"scene":9,"duration":40,"title":"Learning Every Day","prompt":"Montage of child Shivaji learning horse riding with a gentle calm horse, studying maps of hills, listening to elders, practicing skills safely, bright colorful historical children's animation."},
+    {"scene":10,"duration":45,"title":"Lost Children","prompt":"A few children looking worried near a safe village hillside, young Shivaji calmly reassuring them and guiding them along a clear path, friendly expressions, soft daylight, no danger or violence."},
+    {"scene":11,"duration":40,"title":"Brave Together","prompt":"Children safely returning to their happy families in the village, parents smiling with relief, Shivaji smiling modestly, sunset beginning, warm emotional children's animation."},
+    {"scene":12,"duration":45,"title":"A Promise","prompt":"Young Shivaji and Jijabai standing together overlooking green Maharashtra hills and a distant fort at sunset, Jijabai gently placing her hand on his shoulder, inspiring peaceful composition, cinematic children's animation."},
+    {"scene":13,"duration":40,"title":"A Great Leader","prompt":"Time-transition montage from child Shivaji to adult Chhatrapati Shivaji Maharaj, shown respectfully and non-violently as a wise leader greeting people and caring for his community, historic Maharashtra setting, uplifting children's animation."},
+    {"scene":14,"duration":40,"title":"The Lesson","prompt":"Happy children in a beautiful village sharing and helping one another, soft glowing sunset, words represented visually through kindness and teamwork, joyful ending, colorful 3D animation."}
+  ],
+  "negative_prompt": "violence, battle scenes, blood, injury, frightening imagery, weapons close-up, horror, dark mood, realistic conflict, text artifacts, distorted faces, extra fingers, scary expressions"
+}
